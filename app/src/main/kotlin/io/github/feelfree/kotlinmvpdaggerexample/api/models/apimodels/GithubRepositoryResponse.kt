@@ -18,7 +18,7 @@ data class GithubRepositoryResponse (
     @Json(name = "html_url")
     var htmlUrl: String,
     @Json(name = "description")
-    var description: String,
+    var description: String?,
     @Json(name = "fork")
     var fork: Boolean,
     @Json(name = "url")

@@ -7,10 +7,10 @@ import io.github.feelfree.kotlinmvpdaggerexample.di.DaggerAppComponent
 
 class KotlinDaggerExampleApplication : DaggerApplication() {
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
-        return DaggerAppComponent.builder().build()
+        return DaggerAppComponent.builder().create(this)
     }
 
     companion object {
-        val BASE_URL = "api.github.com"
+        val BASE_URL = "https://api.github.com"
     }
 }

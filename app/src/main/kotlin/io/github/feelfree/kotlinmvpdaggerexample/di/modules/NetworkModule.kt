@@ -10,6 +10,7 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
+import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 // Provides network-related classes
@@ -17,6 +18,16 @@ import javax.inject.Singleton
 class NetworkModule {
     @Provides
     fun provideApplicationSchedulers() : Schedulers = ApplicationSchedulers()
+
+    @Provides
+    @Singleton
+    fun provideOkHttpClient(): OkHttpClient {
+        return OkHttpClient.Builder()
+                .connectTimeout(30, TimeUnit.SECONDS)
+                .readTimeout(30, TimeUnit.SECONDS)
+                .writeTimeout(30, TimeUnit.SECONDS)
+                .build()
+    }
 
     @Provides
     @Singleton

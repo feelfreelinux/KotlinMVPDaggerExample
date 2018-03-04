@@ -12,7 +12,7 @@ class GithubRepositoryMapper {
 
     companion object : Mapper<GithubRepositoryResponse, GithubRepository> {
         override fun map(value: GithubRepositoryResponse): GithubRepository {
-            return GithubRepository( "@${value.name}", value.description)
+            return GithubRepository( value.name, value.description ?: "")
         }
 
     }
