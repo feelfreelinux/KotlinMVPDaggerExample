@@ -1,0 +1,17 @@
+mutation addBoardArea($boardId: ID!, $areaName: String!) {
+  createBoardArea(
+    data: { name: $areaName, board: { connect: { id: $boardId } } }
+  ) {
+    id
+    name
+    cards: cards(orderBy: index_ASC) {
+      area {
+        id
+      }
+      id
+      title
+      index
+      content
+    }
+  }
+}

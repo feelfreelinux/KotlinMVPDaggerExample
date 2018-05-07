@@ -1,0 +1,11 @@
+mutation createBoard($name: String!) {
+  createBoard(data: { name: $name }) {
+    id
+    name
+  }
+}
+
+fragment BoardFragment on Board {
+  id,
+  name
+}

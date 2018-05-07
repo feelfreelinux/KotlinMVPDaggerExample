@@ -1,0 +1,22 @@
+mutation addCard($areaId: ID!, $index: Int!, $content: String!, $title: String!) {
+  createCard(
+    data: {
+      title: $title
+      content: $content
+      index: $index
+      area: { connect: { id: $areaId } }
+    }
+  ) {
+    ...CardFragment
+  }
+}
+
+fragment CardFragment on Card {
+  id
+  title
+  content
+  index
+  area {
+    id
+  }
+}
