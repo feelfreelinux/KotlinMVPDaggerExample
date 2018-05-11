@@ -11,6 +11,6 @@ class DevbordApp : DaggerApplication() {
     }
 
     companion object {
-        val BASE_URL = "https://localhost:4466"
+        val BASE_URL = "http://192.168.254.109:4466/"
     }
 }

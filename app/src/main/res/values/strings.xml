@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Kotlin MVP Dagger Example</string>
+    <string name="app_name">DevBord</string>
+    <string name="boardlist_title">Your boards</string>
 </resources>

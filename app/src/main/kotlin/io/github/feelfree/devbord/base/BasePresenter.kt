@@ -10,13 +10,11 @@ open class BasePresenter<T : BaseView> {
         get() = view != null
 
     open fun subscribe(view: T) {
-        compositeObservable.dispose()
-        compositeObservable = CompositeDisposable()
         this.view = view
     }
 
     open fun unsubscribe() {
         view = null
-        compositeObservable.dispose()
+        compositeObservable.clear()
     }
 }

@@ -45,6 +45,7 @@ class NetworkModule {
                 .build()
     }
 
+    @Provides
     @Singleton
     fun provideApollo(okHttpClient: OkHttpClient): ApolloClient {
         return ApolloClient.builder()
